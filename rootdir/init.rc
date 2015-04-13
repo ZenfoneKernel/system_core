@@ -9,8 +9,8 @@ import /init.usb.rc
 import /init.${ro.hardware}.rc
 import /init.${ro.zygote}.rc
 import /init.trace.rc
-# Include Vanir's extra init file
-import /init.vanir.rc
+# Include Exodus's extra init file
+import /init.exodus.rc
 
 
 on early-init
