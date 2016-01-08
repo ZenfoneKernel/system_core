@@ -129,6 +129,12 @@ ifneq ($(ENABLE_CPUSETS),)
 LOCAL_CFLAGS += -DUSE_CPUSETS
 endif
 LOCAL_CFLAGS += -Werror -std=gnu90
+LOCAL_CFLAGS += \
+    -O3 \
+    -fno-inline-functions \
+    $(DEBUG_SYMBOL_FLAGS) \
+    $(DEBUG_FRAME_POINTER_FLAGS)
+
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
