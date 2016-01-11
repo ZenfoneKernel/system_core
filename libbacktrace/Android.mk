@@ -80,6 +80,7 @@ include $(LOCAL_PATH)/Android.build.mk
 #-------------------------------------------------------------------------
 # The libbacktrace_test library needed by backtrace_test.
 #-------------------------------------------------------------------------
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 libbacktrace_test_cflags := \
 	-O0 \
 
@@ -94,10 +95,11 @@ libbacktrace_test_multilib := both
 include $(LOCAL_PATH)/Android.build.mk
 build_type := host
 include $(LOCAL_PATH)/Android.build.mk
-
+endif
 #-------------------------------------------------------------------------
 # The backtrace_test executable.
 #-------------------------------------------------------------------------
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 backtrace_test_cflags := \
 	-fno-builtin \
 	-O0 \
@@ -135,7 +137,7 @@ backtrace_test_multilib := both
 include $(LOCAL_PATH)/Android.build.mk
 build_type := host
 include $(LOCAL_PATH)/Android.build.mk
-
+endif
 #----------------------------------------------------------------------------
 # Special truncated libbacktrace library for mac.
 #----------------------------------------------------------------------------

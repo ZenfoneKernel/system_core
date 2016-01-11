@@ -75,6 +75,7 @@ LOCAL_MULTILIB := both
 
 include $(BUILD_EXECUTABLE)
 
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 debuggerd_test_src_files := \
     utility.cpp \
     test/dump_maps_test.cpp \
@@ -127,3 +128,4 @@ LOCAL_MODULE_STEM_32 := $(LOCAL_MODULE)32
 LOCAL_MODULE_STEM_64 := $(LOCAL_MODULE)64
 LOCAL_MULTILIB := both
 include $(BUILD_NATIVE_TEST)
+endif

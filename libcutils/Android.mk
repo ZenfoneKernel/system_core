@@ -150,4 +150,6 @@ LOCAL_CFLAGS += -Werror
 LOCAL_C_INCLUDES := $(libcutils_c_includes)
 include $(BUILD_SHARED_LIBRARY)
 
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 include $(call all-makefiles-under,$(LOCAL_PATH))
+endif

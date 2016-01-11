@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+ifeq ($(BUILD_PLATFORM_TESTS),true)
+
 # Build the unit tests.
 LOCAL_PATH := $(call my-dir)
 
@@ -46,3 +48,4 @@ LOCAL_SRC_FILES := Vector_test.cpp
 LOCAL_STATIC_LIBRARIES := libutils liblog
 
 include $(BUILD_HOST_NATIVE_TEST)
+endif

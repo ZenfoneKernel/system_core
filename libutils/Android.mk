@@ -114,6 +114,7 @@ include $(BUILD_SHARED_LIBRARY)
 # Include subdirectory makefiles
 # ============================================================
 
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := SharedBufferTest
 LOCAL_STATIC_LIBRARIES := libutils libcutils
@@ -130,3 +131,4 @@ include $(BUILD_HOST_NATIVE_TEST)
 
 # Build the tests in the tests/ subdirectory.
 include $(call first-makefiles-under,$(LOCAL_PATH))
+endif

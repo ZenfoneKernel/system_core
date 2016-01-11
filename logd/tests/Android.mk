@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 LOCAL_PATH := $(call my-dir)
 
 # -----------------------------------------------------------------------------
@@ -50,3 +51,4 @@ LOCAL_CFLAGS += $(test_c_flags)
 LOCAL_SHARED_LIBRARIES := libcutils
 LOCAL_SRC_FILES := $(test_src_files)
 include $(BUILD_NATIVE_TEST)
+endif

@@ -52,4 +52,6 @@ ALL_TOOLS := logpersist.start logpersist.stop logpersist.cat
 LOCAL_POST_INSTALL_CMD := $(hide) $(foreach t,$(filter-out $(LOCAL_MODULE),$(ALL_TOOLS)),ln -sf $(LOCAL_MODULE) $(TARGET_OUT)/bin/$(t);)
 include $(BUILD_PREBUILT)
 
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 include $(call first-makefiles-under,$(LOCAL_PATH))
+endif

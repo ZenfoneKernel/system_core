@@ -37,4 +37,6 @@ LOCAL_MULTILIB := both
 
 include $(BUILD_HOST_SHARED_LIBRARY)
 
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 include $(LOCAL_PATH)/tests/Android.mk
+endif

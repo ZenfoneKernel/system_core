@@ -75,4 +75,6 @@ LOCAL_CLANG_ASFLAGS_arm += -no-integrated-as
 LOCAL_CLANG_ASFLAGS_arm64 += -no-integrated-as
 include $(BUILD_SHARED_LIBRARY)
 
+ifeq ($(BUILD_PLATFORM_TESTS),true)
 include $(call all-makefiles-under,$(LOCAL_PATH))
+endif
