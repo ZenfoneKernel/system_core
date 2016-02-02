@@ -304,7 +304,12 @@ on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
 
     # Make sure we have the device encryption key
+    # Start logd, then start debuggerd to make debugging early-boot crashes easier.
     start logd
+    start debuggerd
+    start debuggerd64
+
+    # Make sure we have the device encryption key.
     start vold
     installkey /data
 
