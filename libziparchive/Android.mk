@@ -22,6 +22,8 @@ test_files := zip_archive_test.cc zip_writer_test.cc entry_name_utils_test.cc
 # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=61489
 common_cpp_flags := -Wno-missing-field-initializers
 
+common_cpp_flags +=  -ffunction-sections -fdata-sections
+
 include $(CLEAR_VARS)
 LOCAL_CPP_EXTENSION := .cc
 LOCAL_SRC_FILES := ${source_files}
