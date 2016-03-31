@@ -669,7 +669,7 @@ Thread::Thread(bool canCallJava)
         mLock("Thread::mLock"),
         mStatus(NO_ERROR),
         mExitPending(false), mRunning(false)
-#ifdef __ANDROID__
+#ifdef HAVE_ANDROID_OS
         , mTid(-1)
 #endif
 {
