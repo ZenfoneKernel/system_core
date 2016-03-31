@@ -25,8 +25,6 @@
 #include <cutils/list.h>
 #include <cutils/iosched_policy.h>
 
-#include <sys/resource.h>
-
 struct command
 {
         /* list of commands in an action */
@@ -78,12 +76,6 @@ struct svcenvinfo {
     const char *value;
 };
 
-struct svcrlimitinfo {
-    struct svcrlimitinfo *next;
-    int resource;
-    struct rlimit limit;
-};
-
 #define SVC_DISABLED       0x001  // do not autostart with class
 #define SVC_ONESHOT        0x002  // do not restart on exit
 #define SVC_RUNNING        0x004  // currently active
@@ -124,7 +116,6 @@ struct service {
 
     struct socketinfo *sockets;
     struct svcenvinfo *envvars;
-    struct svcrlimitinfo *rlimits;
 
     struct action onrestart;  /* Actions to execute on restart. */
 
