@@ -135,7 +135,7 @@ static void __initialize(void) {
     int pfd;
     int ptid = gettid();
 
-    sprintf(proc_name, "/proc/%d/cmdline", ptid);
+    snprintf(proc_name, sizeof(proc_name), "/proc/%d/cmdline", ptid);
 
     pfd = open(proc_name, O_RDONLY);
     memset(proc_name, 0, sizeof(proc_name));
